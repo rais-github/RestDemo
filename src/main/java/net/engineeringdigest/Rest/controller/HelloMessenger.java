@@ -14,6 +14,9 @@ public class HelloMessenger {
         return "HELLO, from BridgeLabz";
     }
 
-
+    @GetMapping("query/{name}")
+    public String WelcomeUser(@PathVariable String name){
+        return "Hello "+name;
+    }
 
 }
