@@ -1,5 +1,6 @@
 package net.engineeringdigest.Rest.controller;
 
+import net.engineeringdigest.Rest.entity.Message;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -20,5 +21,11 @@ public class HelloMessenger {
     public String greetWithRequestParam(@RequestParam String name){
         return "Hello, " + name + "! Nice to meet you.";
     }
+
+    @PostMapping("post")
+        public String greetWithRequestBody(@RequestBody Message names){
+            return "Hello, "+names.getFirstName()+" "+names.getLastName();
+    }
+
 
 }
